@@ -8,12 +8,12 @@ according to this [comment](https://youtrack.jetbrains.com/oauth?state=%2Fissue%
 
 Following string must be specified as an editor in your app:
 ```bash
-phpstorm://open?url=file://%f&line=%l
+phpstorm://server-host-name?url=file://%f&line=%l
 ```
 
 Alternative syntax is supported for cross-platform compatibility with PhPStorm 8+ (Mac version)
 ```bash
-phpstorm://open?file=%f&line=%l
+phpstorm://server-host-name?file=%f&line=%l
 ```
 
 If something doesn't work, then feel free to [submit an issue](https://github.com/aik099/PhpStormProtocol/issues/new) on GitHub.
@@ -35,12 +35,15 @@ If you're using other Linux distribution then follow these instructions:
 Installing on Mac
 =================
 Please follow instructions from the [this page](LinCastor.md) if the `PhpStorm Protocol.app` won't work as expected on your OS X version.
-PhpStorm 8+ (Mac version only) has built-in url handler and `phpstorm://open?file=%f&line=%l` url needs to be used instead (see https://youtrack.jetbrains.com/issue/IDEA-65879).
+PhpStorm 8+ (Mac version only) has built-in url handler and `phpstorm://host-name?file=%f&line=%l` url needs to be used instead (see https://youtrack.jetbrains.com/issue/IDEA-65879).
 
 1. clone this repository
 2. go to cloned folder
 3. copy folder ```PhpStorm Protocol.app``` to ```/Applications/``` folder
-4. delete cloned folder
+4. optional: create ${HOME}/phpstorm-mapper.php that returns 1 or 2 lines depends on remote hostname:
+    - full path of lokal filename
+    - full path of project directory
+5. delete cloned folder
 
 Installing on Windows
 =====================
